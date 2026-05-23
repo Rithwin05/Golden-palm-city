@@ -1,0 +1,161 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury) and 1 (Organic & Earthy)",
+  "brand_identity": {
+    "vibe": "Cinematic, slow-paced, architectural, calm, futuristic, monumental, environmentally immersive.",
+    "colors": {
+      "primary": "#d99a5b",
+      "primary_foreground": "#0f0d0c",
+      "background": "#0f0d0c",
+      "foreground": "#e8e4db",
+      "surface": "#1a1714",
+      "surface_border": "#e8e4db20",
+      "accent_palm_green": "#2c402d",
+      "accent_ivory": "#f4f1eb",
+      "muted": "#1a1714",
+      "muted_foreground": "#8a857d"
+    },
+    "typography": {
+      "heading_font": "Cormorant Garamond, serif",
+      "body_font": "Outfit, sans-serif",
+      "scale": {
+        "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter font-light leading-none",
+        "h2": "text-3xl md:text-4xl lg:text-5xl tracking-tight font-light",
+        "h3": "text-2xl md:text-3xl tracking-tight font-light",
+        "body": "text-base md:text-lg leading-relaxed text-foreground/80 font-light tracking-wide",
+        "overline": "text-xs md:text-sm uppercase tracking-[0.2em] text-primary"
+      }
+    }
+  },
+  "layout_and_spacing": {
+    "container": "max-w-[1400px] mx-auto px-6 md:px-12",
+    "section_padding": "py-24 md:py-32 lg:py-40",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16",
+    "glassmorphism": "backdrop-blur-2xl bg-[#0f0d0c]/60 border border-[#e8e4db]/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]",
+    "surface_cards": "bg-[#1a1714] border border-[#e8e4db]/5 rounded-none"
+  },
+  "motion_philosophy": {
+    "scroll": "Use lenis for buttery smooth momentum scrolling. The website should feel heavy and premium.",
+    "transitions": "Slow, architectural. No bouncy effects. Use ease: [0.16, 1, 0.3, 1].",
+    "reveal": "Framer Motion: initial { opacity: 0, y: 40 }, animate { opacity: 1, y: 0 }, transition { duration: 1.2, ease: 'easeOut' }. Stagger children by 0.2s.",
+    "hover": "Subtle image scale (1.05) over 1.5s, text color shift to primary. No sudden or harsh jumps."
+  },
+  "components": {
+    "header": {
+      "style": "Fixed top-0 left-0 right-0 z-50 py-4. Floating glassmorphism on scroll.",
+      "layout": "Flex container, Brand on left (Cormorant Garamond), Navigation in center (Outfit, hidden on mobile), CTA on right."
+    },
+    "buttons": {
+      "primary": "bg-primary text-primary_foreground rounded-none px-8 py-4 uppercase tracking-widest text-sm hover:bg-accent_ivory transition-colors duration-500",
+      "outline": "border border-primary text-primary rounded-none px-8 py-4 uppercase tracking-widest text-sm hover:bg-primary hover:text-primary_foreground transition-colors duration-500"
+    },
+    "forms": {
+      "style": "Minimalist, editorial. Do not use generic boxed inputs.",
+      "inputs": "bg-transparent border-0 border-b border-surface_border rounded-none px-0 py-4 text-foreground focus:ring-0 focus:border-primary transition-colors"
+    }
+  },
+  "blueprint_sections": [
+    {
+      "name": "Hero Section",
+      "description": "Cinematic full-screen entrance. Golden Palm City entrance gate at sunset.",
+      "layout": "h-screen relative flex items-center justify-center. Image covers background with bg-gradient-to-t from-[#0f0d0c] to-[#0f0d0c]/40 overlay.",
+      "elements": [
+        "Overline: 'INDIA\\'S FIRST CINEMATIC FUTURE-LAND'",
+        "H1: 'Escape the chaos. Discover tomorrow early.'",
+        "CTA Button: 'Continue Your Journey'"
+      ]
+    },
+    {
+      "name": "Discovery Narrative",
+      "description": "Act 2: Minimalist textual interlude. Large editorial typography establishing emotion.",
+      "layout": "Center-aligned, massive padding, max-w-4xl mx-auto text-center.",
+      "elements": [
+        "H2: 'A visionary luxury ecosystem discovered before the rest of the world arrives.'",
+        "Floating environmental imagery overlapping the text slightly (use trust_layer_bg or environmental_luxury as accent)."
+      ]
+    },
+    {
+      "name": "Environmental & Lifestyle Luxury",
+      "description": "Act 3: Bento layout showcasing the future lifestyle.",
+      "layout": "Bento Grid (md:grid-cols-12). Asymmetric.",
+      "elements": [
+        "Large Image (col-span-8): Environmental Luxury image",
+        "Small Image/Text block (col-span-4): Lifestyle Cinematics image. High margin-top to break grid alignment."
+      ]
+    },
+    {
+      "name": "Upcoming Projects",
+      "description": "Act 4: 4 luxury project cards (Golden Palm City, Vantage Farms, Chandan Valley, Doctor's Colony).",
+      "layout": "Grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16.",
+      "elements": [
+        "Project Cards: Surface cards, 1px subtle border, large edge-to-edge images, minimal elegant text underneath. Image wrappers must have overflow-hidden for scale hover effect."
+      ]
+    },
+    {
+      "name": "Trust Layer & Concierge",
+      "description": "Act 5: Final conversion and trust marks.",
+      "layout": "Grid md:grid-cols-2 gap-16.",
+      "elements": [
+        "Left Side (Trust): RERA & HMDA approvals, connectivity, infrastructure facts.",
+        "Right Side (Concierge): Minimalist form (name, phone, interest) using custom bottom-border input styles.",
+        "CTA Button: 'Reserve Your Place'"
+      ]
+    }
+  ],
+  "media_assets": {
+    "hero_background": {
+      "url": "https://customer-assets.emergentagent.com/job_902851f7-4141-441a-b04e-2cfc5affd28f/artifacts/0jqwwqds_Hero%20section.png",
+      "category": "hero",
+      "description": "Golden Palm City entrance gate at golden hour"
+    },
+    "project_1": {
+      "url": "https://customer-assets.emergentagent.com/job_902851f7-4141-441a-b04e-2cfc5affd28f/artifacts/uj7ps9ag_project_1.png",
+      "category": "project",
+      "description": "Golden Palm City luxury & nature villas"
+    },
+    "project_2": {
+      "url": "https://customer-assets.emergentagent.com/job_902851f7-4141-441a-b04e-2cfc5affd28f/artifacts/gbc6vgmh_project2.png",
+      "category": "project",
+      "description": "Vantage Farms"
+    },
+    "project_3": {
+      "url": "https://customer-assets.emergentagent.com/job_902851f7-4141-441a-b04e-2cfc5affd28f/artifacts/9p8rxtk4_project3.png",
+      "category": "project",
+      "description": "Chandan Valley"
+    },
+    "project_4": {
+      "url": "https://customer-assets.emergentagent.com/job_902851f7-4141-441a-b04e-2cfc5affd28f/artifacts/obhcu0a2_project4.png",
+      "category": "project",
+      "description": "Doctor's Colony"
+    },
+    "environmental_luxury": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/902851f7-4141-441a-b04e-2cfc5affd28f/images/896f0c5c73a9e5a00c3abfaa2af3069c10b20610ecf0ceaf959d28906546262b.png",
+      "category": "environment",
+      "description": "Cinematic architectural photography of palm-lined boulevards and tranquil water reflections"
+    },
+    "lifestyle_cinematic": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/902851f7-4141-441a-b04e-2cfc5affd28f/images/ca8072070e244c432efd210c4c6e653bf0822d669fa0f02950920d92dff04be0.png",
+      "category": "lifestyle",
+      "description": "Modern luxury villa interior looking out towards a calm reflective water pool"
+    },
+    "trust_layer_bg": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/902851f7-4141-441a-b04e-2cfc5affd28f/images/ea9a4f167dea7e812900d99df9d8ee85691b94edf8f0e6b54e93eee32acc7635.png",
+      "category": "background",
+      "description": "Abstract macro photography of dune sand textures and monumental beige ivory stone intersecting"
+    }
+  },
+  "technical_instructions": {
+    "libraries_to_install": [
+      "lucide-react",
+      "@studio-freight/react-lenis",
+      "framer-motion",
+      "clsx",
+      "tailwind-merge"
+    ],
+    "components_to_use": [
+      "Use Shadcn form elements (Input, Button) for the Trust Layer Concierge CTA, but customize styles heavily to match editorial look.",
+      "Use pure HTML/Tailwind for layouts and sections to maintain organic structure."
+    ],
+    "testing_attributes": "Add data-testid to ALL interactive and key elements. Role-based, kebab-case (e.g., data-testid='hero-cta-button', data-testid='concierge-form')."
+  }
+}
