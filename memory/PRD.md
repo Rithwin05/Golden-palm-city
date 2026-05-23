@@ -34,6 +34,14 @@ A cinematic luxury real-estate experience platform for **Golden Palm City** (Kin
 - ✅ WhatsApp deep-link (`wa.me/917997700031`)
 - ✅ All interactive elements have `data-testid`
 
+## Implemented (2026-02 — v1.1 Cinematic Polish)
+- ✅ **Cinematic IntroLoader** (full-screen brand reveal + counter; once per session via sessionStorage)
+- ✅ **Ambient audio toggle** (Web Audio API drone — two detuned sine oscillators + filtered pink noise + LFO breathing; opt-in, no external file)
+- ✅ **Hero particles overlay** (pure HTML5 Canvas, ~140 golden motes drifting with depth parallax + soft fog vignette)
+- ✅ **Project detail pages** at `/projects/:slug` — image gallery with thumbnails, description, highlights, amenities grid, indicative masterplan SVG, connectivity, WhatsApp concierge CTA, "continue the constellation" related-projects strip
+- ✅ Extended Project schema (description, gallery, amenities, masterplan, area, plot_sizes, connectivity)
+- ✅ React Router routing (Home + ProjectDetail)
+
 ## Prioritized Backlog
 - **P1**: Loading screen / cinematic intro animation; light WebGL fog/particles in hero
 - **P1**: Project detail pages (deep-dive per project) with masterplan
