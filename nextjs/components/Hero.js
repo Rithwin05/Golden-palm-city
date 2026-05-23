@@ -21,7 +21,7 @@ export default function Hero() {
   // Fade out text overlay elements as scroll progresses
   const opacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
 
-  const frameCount = 211;
+  const frameCount = 271;
 
   // Helper to draw image onto canvas preserving "cover" aspect ratio
   const drawImage = (img) => {
