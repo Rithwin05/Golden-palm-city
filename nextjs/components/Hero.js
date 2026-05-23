@@ -140,7 +140,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="relative h-[300vh] w-full bg-ink"
+      className="relative h-[200vh] w-full bg-ink"
       data-testid="hero-section"
     >
       {/* Sticky Inner container that stays fixed while scroll happens */}
