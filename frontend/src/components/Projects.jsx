@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import { buildWhatsAppHref } from "../lib/content";
 
 const ease = [0.16, 1, 0.3, 1];
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -68,7 +68,11 @@ const Projects = () => {
               }`}
               data-testid={`project-card-${p.slug}`}
             >
-              <div className="img-reveal relative">
+              <Link
+                to={`/projects/${p.slug}`}
+                className="img-reveal relative block"
+                data-testid={`project-image-link-${p.slug}`}
+              >
                 <img
                   src={p.image_url}
                   alt={p.name}
@@ -105,7 +109,7 @@ const Projects = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
 
               <div className="mt-6 md:mt-8 grid grid-cols-12 gap-4 md:gap-8 items-start">
                 <p className="col-span-12 md:col-span-6 text-base md:text-lg text-bone/70 font-light leading-relaxed">
@@ -123,17 +127,13 @@ const Projects = () => {
                   ))}
                 </ul>
                 <div className="col-span-12 md:col-span-2 flex md:justify-end">
-                  <a
-                    href={buildWhatsAppHref(
-                      `I'd like to explore ${p.name} (${p.location}). Please share details.`
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    to={`/projects/${p.slug}`}
                     className="luxe-link text-[10px] uppercase tracking-[0.3em] text-sand hover:text-ivory"
                     data-testid={`project-cta-${p.slug}`}
                   >
                     Explore →
-                  </a>
+                  </Link>
                 </div>
               </div>
 

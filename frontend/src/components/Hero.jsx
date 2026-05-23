@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ASSETS, HERO, buildWhatsAppHref } from "../lib/content";
+import Particles3D from "./Particles3D";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -21,6 +22,9 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/70" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-ink/40" />
       </div>
+
+      {/* WebGL particles overlay — subtle environmental dust */}
+      <Particles3D className="z-[1]" />
 
       {/* Top-left overline */}
       <div className="absolute top-28 md:top-32 left-6 md:left-12 z-10">

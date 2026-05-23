@@ -110,3 +110,40 @@ def test_create_inquiry_validation_missing_phone(session):
 def test_create_inquiry_validation_missing_name(session):
     r = session.post(f"{API}/concierge/inquiries", json={"phone": "+910000000000"})
     assert r.status_code == 422
+
+
+# ===== Iteration 2: Extended Project fields =====
+def test_golden_palm_city_extended_fields(session):
+    """Flagship project must expose description, gallery (>=2 imgs), amenities, plot_sizes, area, connectivity."""
+    r = session.get(f"{API}/projects/golden-palm-city")
+    assert r.status_code == 200, r.text
+    p = r.json()
+    # description
+    assert isinstance(p.get("description"), str) and len(p["description"]) > 20
+    # gallery >= 2 imgs
+    assert isinstance(p.get("gallery"), list) and len(p["gallery"]) >= 2
+    for url in p["gallery"]:
+        assert isinstance(url, str) and url.startswith("http")
+    # amenities
+    assert isinstance(p.get("amenities"), list) and len(p["amenities"]) >= 3
+    # masterplan_url present in schema (may be None) — key MUST exist
+    assert "masterplan_url" in p
+    # plot_sizes + area as strings
+    assert isinstance(p.get("plot_sizes"), str) and len(p["plot_sizes"]) > 0
+    assert isinstance(p.get("area"), str) and len(p["area"]) > 0
+    # connectivity list with content
+    assert isinstance(p.get("connectivity"), list) and len(p["connectivity"]) >= 2
+
+
+@pytest.mark.parametrize("slug", sorted(EXPECTED_SLUGS))
+def test_all_slugs_have_extended_schema_keys(session, slug):
+    """All 4 projects must expose the extended schema keys (values may be empty/null)."""
+    r = session.get(f"{API}/projects/{slug}")
+    assert r.status_code == 200, r.text
+    p = r.json()
+    for key in ("description", "gallery", "amenities", "masterplan_url", "area", "plot_sizes", "connectivity"):
+        assert key in p, f"missing key {key} on {slug}"
+    # types
+    assert isinstance(p["gallery"], list)
+    assert isinstance(p["amenities"], list)
+    assert isinstance(p["connectivity"], list)

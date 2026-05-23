@@ -172,3 +172,11 @@ html.lenis body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ===== Masterplan grid background ===== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(232, 228, 219, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 228, 219, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
